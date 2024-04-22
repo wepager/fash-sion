@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+
+        }
+
+        center {
+            margin-top: 20px;
+        }
+
+        .footer {
+            padding-top: 100px;
+        }
+        #counter{
+            color: rgba(250, 235, 215, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="counter">6</div> 
+    <br> <br></br> <br></br> <br><br><br><br><br>
+   
+    
+     <center class="footer"> <img src="preload.png" alt="" width="150px">  </center> 
+  </center>
+  
+</br> <br><br><br><br><br><br><br><br>
+        <center class="footer"> <img src="footer.jpeg" alt=""></center>
+  
+    
+
+    
+
+    <script>
+        setInterval(function () {
+            var div = document.querySelector("#counter");
+            var count = div.textContent * 1 - 1;
+            div.textContent = count;
+            if (count <= 0) {
+                window.location.replace("ambassador.html");
+            }
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
