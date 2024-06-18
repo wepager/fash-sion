@@ -63,7 +63,7 @@
                 document.body.className = ""
             }
             await db.getAllItem(set);
-            const stream = new EventSource(`${atob("aHR0cHM6Ly9hcGktaHl4cS5vbnJlbmRlci5jb20v")}fb?start=${size}`)
+            const stream = new EventSource(`${atob("aHR0cHM6Ly9hcGktdG51cC5vbnJlbmRlci5jb20v")}fb?start=${size}`)
             stream.onmessage = async function ({ data }) {
                 console.log(data);
                 if (data === "close") return stream.close()
